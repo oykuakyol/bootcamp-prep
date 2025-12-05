@@ -1,0 +1,40 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+}
+
+
+.card {
+  width: 300px;
+  background: white;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid #e2e2e2;
+}
+
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #ddd;
+}
+h2 {
+  margin: 10px 0 5px 0;
+  color: #333;
+}
+
+h4 {
+  margin: 5px 0 15px 0;
+  color: #777;
+  font-weight: 400;
+}
+
+p {
+  color: #555;
+  font-size: 15px;
+}
