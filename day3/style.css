@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header & Footer */
+.header, .footer {
+  background: #4b8efa;
+  color: white;
+  padding: 20px;
+  text-align:center;
+}
+
+/* Flex container */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Kutular */
+.box {
+  background: #e4e4e4;
+  padding: 20px;
+  width: 45%;
+  border-radius: 10px;
+  text-align: center;
+}
