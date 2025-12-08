@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 5 - JS Basics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<h1>JavaScript Basics</h1>
+  <div class="box">
+   <label>Enter a Number:</label>
+<input type="number" id="userNumber" placeholder="type a number..."/>
+ <button onclick="checkNumber()">Check Even / Odd</button>
+  
+<p id="result"></p>
+
+<script>
+    function checkNumber() {
+      const num = Number(document.getElementById("userNumber").value);
+      let message = "";
+
+      if (num % 2 === 0) {
+        message = num + " is EVEN";
+      } else {
+        message = num + " is ODD";
+      }
+
+      document.getElementById("result").textContent = message;
+    }
+  </script>
+
+
+
+
+
+
+</body>
+</html>
