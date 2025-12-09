@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 6 - Student Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Student Manager</h1>
+
+    <!-- Add student -->
+    <input type="text" id="studentInput" placeholder="Enter student name..." />
+    <button onclick="addStudent()">Add Student</button>
+
+    <!-- Remove last student -->
+    <button onclick="removeLastStudent()" class="deleteBtn">Remove Last Student</button>
+
+    <!-- Filter A-starting students -->
+    <button onclick="showFilterA()" class="filterBtn">Show Students Starting With A</button>
+
+    <!-- List area -->
+    <h3>Student List:</h3>
+    <ul id="studentList"></ul>
+
+    <h3>Filtered (A):</h3>
+    <ul id="filteredList"></ul>
+  </div>
+
+  <script>
+    // Student array
+    const students = [];
+
+    // Add student function
+    function addStudent() {
+      const name = document.getElementById("studentInput").value.trim();
+
+      if (name === "") {
+        alert("Please enter a name.");
+        return;
+      }
+
+      students.push(name);
+      document.getElementById("studentInput").value = "";
+      updateList();
+    }
+
+    // Remove last student
+    function removeLastStudent() {
+      if (students.length === 0) {
+        alert("List is already empty.");
+        return;
+      }
+
+      students.pop();
+      updateList();
+    }
+
+    // Filter students starting with A
+    function showFilterA() {
+      const filtered = students.filter(s => s.startsWith("A") || s.startsWith("a"));
+
+      const filteredList = document.getElementById("filteredList");
+      filteredList.innerHTML = "";
+
+      filtered.forEach(student => {
+        const li = document.createElement("li");
+        li.textContent = student;
+        filteredList.appendChild(li);
+      });
+    }
+
+    // Update the student list (map)
+    function updateList() {
+      const list = document.getElementById("studentList");
+      list.innerHTML = "";
+
+      students.map((student, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${student}`;
+        list.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>
